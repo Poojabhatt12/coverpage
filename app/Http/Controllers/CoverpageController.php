@@ -59,7 +59,7 @@ class CoverpageController extends Controller
 
         Coverpage::create($dataToSave);
 
-        return redirect()->route('coverpage.index');
+        return redirect()->route('coverpage.index')->with('success','coverpage created successfully!');
 
         // dd($request->all());  //dumps user submitted data
         // step 1 do validation
@@ -76,7 +76,7 @@ class CoverpageController extends Controller
      */
     public function show(Coverpage $coverpage)
     {
-        return view('coverpage.viewDetails')->with(["coverpage"=>$coverpage]);
+        return view('coverpage.viewDetails')->with(["coverpage" => $coverpage]);
     }
 
     /**
@@ -98,6 +98,7 @@ class CoverpageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Coverpage $coverpage)
+
     {
         $request->validate([
             'name' => 'required',
@@ -105,19 +106,17 @@ class CoverpageController extends Controller
             'required_questions' => 'required',
             // 'file' => 'required',
         ]);
-
-        if($request->file) {
+        if ($request->file) {
             $fileName = $request->file->store('coverpage');
             $dataToSave = $request->except('file') + ['file' => $fileName];
-
-        }else{
+        } else {
             $dataToSave = $request->except('file');
         }
 
 
         $coverpage->update($dataToSave);
 
-        return redirect()->route('coverpage.index');
+        return redirect()->route('coverpage.index')->with('success','Coverpage updated successfully');
     }
 
     /**

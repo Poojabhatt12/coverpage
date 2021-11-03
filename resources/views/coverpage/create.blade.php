@@ -9,20 +9,27 @@
 </style>
 
 <h2>Cover Page</h2>
-    <form action="/coverpage" method='POST' enctype='multipart/form-data'>
-        @csrf
 
-        <input type="text" name='name' placeholder='name'>
+<form action="/coverpage" method='POST' enctype='multipart/form-data'>
+    @csrf
 
-        <input type="text" name='title' placeholder='title'>
 
-        <input type="number" name='required_questions' placeholder='required_questions'>
+    <label for="name">Name:</label><br>
+    <input type="text" name="name" placeholder='name'><br><br>
 
-        <input type="file" name='file' placeholder='file'>
+    <label for="title">Title:</label><br>
+    <input type="text" name="title" placeholder="title"><br><br>
 
-       
-        <input type="submit" class="btn btn-success" value="Save">
+    <label for="required_questions">RequiredQuestions:</label><br>
+    <input type="text" name="required_questions" placeholder="required_questions"><br><br>
+
+    <label for="file">File:</label><br>
+    <input type="text" name="file" placeholder="file"><br><br>
+
+    <input type="submit" class="btn btn-success" value="Save">
+
 
 </form>
+
 
 @endsection
