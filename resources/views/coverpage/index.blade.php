@@ -14,7 +14,10 @@
             <a class="navbar-brand" href="#">
                 <h2>CoverPage</h2>
             </a>
-
+            <form class="d-flex">
+                    <input class="form-control me-2 mr-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </form>
        
      <a class="btn btn-sm btn-primary" href=" {{route('coverpage.create')}} " role="button">Add new Coverpage</a>
 

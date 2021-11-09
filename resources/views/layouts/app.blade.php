@@ -25,10 +25,7 @@
                         <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2 mr-2" type="text" placeholder="Search">
-                    <button class="btn btn-primary" type="button">Search</button>
-                </form>
+             
             </div>
         </nav>
 
