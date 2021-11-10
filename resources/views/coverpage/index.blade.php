@@ -14,10 +14,13 @@
             <a class="navbar-brand" href="#">
                 <h2>CoverPage</h2>
             </a>
-            <form class="d-flex">
-                    <input class="form-control me-2 mr-2" type="text" placeholder="Search">
-                    <button class="btn btn-primary" type="button">Search</button>
-                </form>
+            <form class="d-flex" action="{{route('coverpage.index')}}" method="GET">
+                    <input name="search" class="form-control me-2 mr-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary" type="submit">Search</button>
+            <a class="ml-2 btn btn-primary" href="{{route('coverpage.index')}}">Reset</a>
+
+            </form>
+
        
      <a class="btn btn-sm btn-primary" href=" {{route('coverpage.create')}} " role="button">Add new Coverpage</a>
 
@@ -43,7 +46,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($coverPagesRam as $coverPage)
+            @foreach($coverPages as $coverPage)
             <tr>
                 <td>{{$coverPage->name}}</td>
                 <td>{{$coverPage->title}}</td>

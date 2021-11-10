@@ -14,10 +14,17 @@ class CoverpageController extends Controller
      */
     public function index()
     {
-        $coverPagesRam = Coverpage::all();
+        $searchTerm = request()->get('search');
+
+       if($searchTerm){
+            $coverPages = Coverpage::where('name','LIKE', "%".$searchTerm."%")->get();
+       } else{
+            $coverPages = Coverpage::all();
+       }
+     
 
         $dataNepalIndia = [
-            'coverPagesRam' => $coverPagesRam,
+            'coverPages' => $coverPages,
         ];
 
         return view('coverpage.index')->with($dataNepalIndia);  // passing data to view
