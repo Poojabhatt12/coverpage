@@ -16,18 +16,14 @@ class CoverpageController extends Controller
     {
         $searchTerm = request()->get('search');
 
-       if($searchTerm){
-            $coverPages = Coverpage::where('name','LIKE', "%".$searchTerm."%")->get();
-       } else{
-            $coverPages = Coverpage::all();
-       }
-     
+        if ($searchTerm) {
+            $coverPages = Coverpage::where('name', 'LIKE', "%" . $searchTerm . "%")->paginate(4);
+        } else {
+            $coverPages = Coverpage::paginate(4);
+        }
 
-        $dataNepalIndia = [
-            'coverPages' => $coverPages,
-        ];
+        return view('coverpage.index', compact('coverPages'));  // passing data to view
 
-        return view('coverpage.index')->with($dataNepalIndia);  // passing data to view
 
     }
 
@@ -66,7 +62,7 @@ class CoverpageController extends Controller
 
         Coverpage::create($dataToSave);
 
-        return redirect()->route('coverpage.index')->with('success','coverpage created successfully!');
+        return redirect()->route('coverpage.index')->with('success', 'coverpage created successfully!');
 
         // dd($request->all());  //dumps user submitted data
         // step 1 do validation
@@ -123,7 +119,7 @@ class CoverpageController extends Controller
 
         $coverpage->update($dataToSave);
 
-        return redirect()->route('coverpage.index')->with('success','Coverpage updated successfully');
+        return redirect()->route('coverpage.index')->with('success', 'Coverpage updated successfully');
     }
 
     /**

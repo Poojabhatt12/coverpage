@@ -4,6 +4,14 @@
     .push-top {
         margin-top: 50px;
     }
+    .btn-group .btn {
+    width: 100px;
+    padding: 17px;
+    line-height: 0;
+    max-height: 0;
+    margin-right: 4px!important;
+    border-radius: 4px!important;
+}
 </style>
 
 @section('content')
@@ -52,6 +60,8 @@
                 <td>{{$coverPage->title}}</td>
                 <td>{{$coverPage->required_questions}}</td>
 
+                
+
                 <td style="width:200px">
                     <div class="btn-group" role="group" aria-label="Basic example">
 
@@ -81,17 +91,8 @@
 
         
     </table>
+    {{ $coverPages->render()}}
 </div>
  
 @endsection
 
-<style scoped>
-   .btn-group .btn {
-    width: 100px;
-    padding: 17px;
-    line-height: 0;
-    max-height: 0;
-    margin-right: 4px!important;
-    border-radius: 4px!important;
-}
-</style>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CoverpageController;
+use App\Http\Controllers\FieldDataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,6 @@ Route::get('/', function () {
 Route::resource('coverpage', CoverpageController::class);
 
 Route::get('/coverpage/{id}', [CoverpageController::class, 'show']);
+
+
+Route::resource('field_data', FieldDataController::class);
