@@ -26,6 +26,11 @@
                     </li>
                 </ul>
 
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/field_data">Field Data <span class="sr-only"></span></a>
+                    </li>
+                </ul>
             </div>
         </nav>
 
