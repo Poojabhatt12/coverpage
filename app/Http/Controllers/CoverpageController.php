@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Coverpage;
 use Illuminate\Http\Request;
 
@@ -54,20 +53,12 @@ class CoverpageController extends Controller
             'file' => 'required',
         ]);
 
-
         $fileName = $request->file->store('coverpage');
 
         $dataToSave = $request->except('file') + ['file' => $fileName];
-
-
         Coverpage::create($dataToSave);
 
         return redirect()->route('coverpage.index')->with('success', 'coverpage created successfully!');
-
-        // dd($request->all());  //dumps user submitted data
-        // step 1 do validation
-        // step 2 store in database
-        // step 3 redirect user to some page
 
     }
 
@@ -107,7 +98,7 @@ class CoverpageController extends Controller
             'name' => 'required',
             'title' => 'required',
             'required_questions' => 'required',
-            // 'file' => 'required',
+            
         ]);
         if ($request->file) {
             $fileName = $request->file->store('coverpage');
@@ -115,8 +106,6 @@ class CoverpageController extends Controller
         } else {
             $dataToSave = $request->except('file');
         }
-
-
         $coverpage->update($dataToSave);
 
         return redirect()->route('coverpage.index')->with('success', 'Coverpage updated successfully');

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h2>Field Data</h2>
+<!-- <h2>Field Data</h2> -->
 
 <form action="/field_data" method='POST'>
     @csrf

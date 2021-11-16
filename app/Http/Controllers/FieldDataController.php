@@ -15,7 +15,19 @@ class FieldDataController extends Controller
      */
     public function index()
     {
-        $fieldData = FieldData::orderBy("created_at","DESC")->paginate(4);
+
+
+        $searchTerm = request()->get('search');
+
+        if ($searchTerm) {
+            $fieldData = FieldData::where('attribute_name', 'LIKE', "%" . $searchTerm . "%")->paginate(4);
+      
+            
+        } else {
+            $fieldData = FieldData::paginate(4);
+        }
+
+        // $fieldData = FieldData::orderBy("created_at","DESC")->paginate(4);
         // $fieldData = FieldData::paginate(4);
 
         return view('field_data.index', compact('fieldData'));

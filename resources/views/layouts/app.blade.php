@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -14,7 +15,8 @@
 
     <div class="container py-3">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white mb-3">
+        <a class="navbar-brand" href="#"><img src="https://stabilityhealthcare.com/wp-content/uploads/StabilityLogoNew.png" width="100"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -24,13 +26,10 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
                     </li>
-                </ul>
-
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="/field_data">Field Data <span class="sr-only"></span></a>
                     </li>
-                </ul>
+               </ul>
             </div>
         </nav>
 
